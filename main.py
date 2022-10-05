@@ -16,7 +16,7 @@ print(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.E
 print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
 
 
-
+print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
 # Array of length 100
 # print(color.PURPLE +"\nTimsorted Array of size N = " + str(len(arr)) + color.END)
 tic = time.perf_counter()
@@ -28,7 +28,7 @@ print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 # Include quick, merge, etc. here
 
 
-
+print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
 # Array of length 1000
 arr = [random.randint(1,100000) for _ in range(1000)]
 
@@ -43,7 +43,7 @@ print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-
 print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 
 
-
+print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
 # Array of length 10,000
 arr = [random.randint(1,100000) for _ in range(10000)]
 
@@ -58,7 +58,7 @@ print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-
 print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 
 
-
+print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
 # Array of length 100,000
 arr = [random.randint(1,100000) for _ in range(100000)]
 
@@ -73,7 +73,7 @@ print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-
 print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 
 
-
+print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
 # Array of length 1,000,000
 arr = [random.randint(1,100000) for _ in range(1000000)]
 
@@ -86,3 +86,4 @@ timSort(arr)
 toc = time.perf_counter()
 print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
 print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
