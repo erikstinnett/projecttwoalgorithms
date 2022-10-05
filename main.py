@@ -1,8 +1,8 @@
 from timsort import *
 from color import *
+import time
+
 import random
-
-
 
 # INCLUDE OTHER SORTING METHODS BELOW TIMSORT. 
 # Use different color to denote sorting method :) 
@@ -19,9 +19,12 @@ print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-
 
 # Array of length 100
 # print(color.PURPLE +"\nTimsorted Array of size N = " + str(len(arr)) + color.END)
+tic = time.perf_counter()
 timSort(arr)
+toc = time.perf_counter()
 print(color.PURPLE +"\nTimsorted Array of size N = " + str(len(arr)) + color.END)
 print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 # Include quick, merge, etc. here
 
 
@@ -32,9 +35,12 @@ arr = [random.randint(1,100000) for _ in range(1000)]
 print(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
 print(arr[:10])
 # Timsort array testing
-print(color.PURPLE +"\nTimsorted Array of size N = " + str(len(arr)) + color.END)
+print(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
+tic = time.perf_counter()
 timSort(arr) 
+toc = time.perf_counter()
 print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 
 
 
@@ -44,9 +50,12 @@ arr = [random.randint(1,100000) for _ in range(10000)]
 print(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
 print(arr[:10])
 # Timsort array testing
-print(color.PURPLE +"\nTimsorted Array of size N = " + str(len(arr)) + color.END)
+print(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
+tic = time.perf_counter()
 timSort(arr) 
+toc = time.perf_counter()
 print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 
 
 
@@ -56,9 +65,12 @@ arr = [random.randint(1,100000) for _ in range(100000)]
 print(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
 print(arr[:10])
 # Timsort array testing
-print(color.PURPLE +"\nTimsorted Array of size N = " + str(len(arr)) + color.END)
+print(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
+tic = time.perf_counter()
 timSort(arr) 
+toc = time.perf_counter()
 print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 
 
 
@@ -68,6 +80,9 @@ arr = [random.randint(1,100000) for _ in range(1000000)]
 print(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
 print(arr[:10])
 # Timsort array testing
-print(color.PURPLE +"\nTimsorted Array of size N = " + str(len(arr)) + color.END)
+print(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
+tic = time.perf_counter()
 timSort(arr) 
+toc = time.perf_counter()
 print("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+print(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
