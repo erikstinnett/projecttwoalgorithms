@@ -25,7 +25,7 @@ timSort(arr)
 toc = time.perf_counter()
 f.write(color.PURPLE +"\nTimsorted Array of size N = " + str(len(arr)) + color.END)
 f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write(color.UNDERLINE + f"\nTime taken: {toc - tic:0.6f} seconds" + color.END)
 # Include quick, merge, etc. here
 
 
@@ -34,14 +34,14 @@ f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 arr = [random.randint(1,100000) for _ in range(1000)]
 
 f.write(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
-f.write(arr[:10])
+f.write(str(arr[:10]))
 # Timsort array testing
 f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
 tic = time.perf_counter()
 timSort(arr) 
 toc = time.perf_counter()
-f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write("\nFirst 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+f.write(color.UNDERLINE + f"\nTime taken: {toc - tic:0.6f} seconds" + color.END)
 
 
 #print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
@@ -49,14 +49,14 @@ f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 arr = [random.randint(1,100000) for _ in range(10000)]
 
 f.write(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
-f.write(arr[:10])
+f.write(str(arr[:10]))
 # Timsort array testing
 f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
 tic = time.perf_counter()
 timSort(arr) 
 toc = time.perf_counter()
-f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write("\nFirst 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+f.write(color.UNDERLINE + f"\nTime taken: {toc - tic:0.6f} seconds" + color.END)
 
 
 #print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
@@ -64,14 +64,14 @@ f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 arr = [random.randint(1,100000) for _ in range(100000)]
 
 f.write(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
-f.write(arr[:10])
+f.write(str(arr[:10]))
 # Timsort array testing
 f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
 tic = time.perf_counter()
 timSort(arr) 
 toc = time.perf_counter()
-f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write("\nFirst 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+f.write(color.UNDERLINE + f"\nTime taken: {toc - tic:0.6f} seconds" + color.END)
 
 
 #print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
@@ -79,12 +79,12 @@ f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 arr = [random.randint(1,100000) for _ in range(1000000)]
 
 f.write(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
-f.write(arr[:10])
+f.write(str(arr[:10]))
 # Timsort array testing
 f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
 tic = time.perf_counter()
 timSort(arr) 
 toc = time.perf_counter()
-f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write("\nFirst 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
+f.write(color.UNDERLINE + f"\nTime taken: {toc - tic:0.6f} seconds" + color.END)
 #print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
