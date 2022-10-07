@@ -33,58 +33,58 @@ f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
 # Array of length 1000
 arr = [random.randint(1,100000) for _ in range(1000)]
 
-f.write(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
-f.write(arr[:10])
+f.write("\n\nUnsorted array of size N = " + str(len(arr)))
+f.write("\n" + str(arr[:10]))
 # Timsort array testing
-f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
+f.write("\nAverage Case: Timsorted Array of size N = " + str(len(arr)))
 tic = time.perf_counter()
 timSort(arr) 
 toc = time.perf_counter()
 f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write(f"Time taken: {toc - tic:0.6f} seconds")
 
 
 #print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
 # Array of length 10,000
 arr = [random.randint(1,100000) for _ in range(10000)]
 
-f.write(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
-f.write(arr[:10])
+f.write("\n\nUnsorted array of size N = " + str(len(arr)))
+f.write("\n" + str(arr[:10]))
 # Timsort array testing
-f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
+f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)))
 tic = time.perf_counter()
 timSort(arr) 
 toc = time.perf_counter()
 f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write(f"Time taken: {toc - tic:0.6f} seconds")
 
 
 #print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
 # Array of length 100,000
 arr = [random.randint(1,100000) for _ in range(100000)]
 
-f.write(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
-f.write(arr[:10])
+f.write("\n\nUnsorted array of size N = " + str(len(arr)))
+f.write(str(arr[:10]))
 # Timsort array testing
-f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
+f.write("\nAverage Case: Timsorted Array of size N = " + str(len(arr)))
 tic = time.perf_counter()
 timSort(arr) 
 toc = time.perf_counter()
 f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write(f"Time taken: {toc - tic:0.6f} seconds")
 
 
 #print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)
 # Array of length 1,000,000
 arr = [random.randint(1,100000) for _ in range(1000000)]
 
-f.write(color.PURPLE + "\n\nUnsorted array of size N = " + str(len(arr)) + color.END)
-f.write(arr[:10])
+f.write("\n\nUnsorted array of size N = " + str(len(arr)))
+f.write(str(arr[:10]))
 # Timsort array testing
-f.write(color.PURPLE +"\nAverage Case: Timsorted Array of size N = " + str(len(arr)) + color.END)
+f.write("\nAverage Case: Timsorted Array of size N = " + str(len(arr)))
 tic = time.perf_counter()
 timSort(arr) 
 toc = time.perf_counter()
 f.write("First 10 integers: " + str(arr[:10]) + "\nLast 10 integers: " + str(arr[-10:]))
-f.write(color.UNDERLINE + f"Time taken: {toc - tic:0.6f} seconds" + color.END)
+f.write(f"Time taken: {toc - tic:0.6f} seconds")
 #print(color.BOLD + color.DARKCYAN + '===========================================================================================' + color.END)

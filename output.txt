@@ -1,6 +1,22 @@
-First 10 integers: [80973, 30992, 79295, 40645, 49634, 12043, 72806, 22682, 98728, 44912]
-Last 10 integers: [92929, 45069, 88428, 17147, 93272, 20411, 54203, 77297, 79063, 24236][95m
-Timsorted Array of size N = 100[0mFirst 10 integers: [836, 1500, 2582, 2597, 2837, 5703, 7547, 8145, 9594, 10242]
-Last 10 integers: [93272, 93732, 96443, 97414, 97861, 98247, 98586, 98728, 99408, 99623][4mTime taken: 0.000094 seconds[0m[95m
+First 10 integers: [54901, 86915, 73726, 13067, 38101, 21149, 37946, 80863, 30787, 99288]
+Last 10 integers: [1643, 43282, 92744, 48279, 35398, 633, 65210, 93272, 81302, 76645][95m
+Timsorted Array of size N = 100[0mFirst 10 integers: [344, 633, 1643, 2112, 2376, 2849, 2960, 3881, 5539, 5866]
+Last 10 integers: [93272, 93313, 93623, 95730, 96396, 96424, 97576, 98100, 98263, 99288][4mTime taken: 0.000099 seconds[0m
 
-Unsorted array of size N = 1000[0m
+Unsorted array of size N = 1000
+[22232, 37346, 10586, 72310, 19173, 28675, 48867, 91120, 65650, 93740]
+Average Case: Timsorted Array of size N = 1000First 10 integers: [128, 148, 291, 297, 308, 589, 602, 818, 1096, 1157]
+Last 10 integers: [99410, 99467, 99525, 99553, 99555, 99687, 99735, 99739, 99900, 99966]Time taken: 0.001413 seconds
+
+Unsorted array of size N = 10000
+[5017, 57804, 93529, 27175, 38095, 59261, 24571, 17554, 43633, 55326][95m
+Average Case: Timsorted Array of size N = 10000First 10 integers: [12, 15, 23, 31, 37, 55, 57, 68, 75, 76]
+Last 10 integers: [99926, 99929, 99934, 99934, 99939, 99945, 99961, 99964, 99967, 99998]Time taken: 0.016364 seconds
+
+Unsorted array of size N = 100000[7982, 83284, 8944, 11978, 1825, 77551, 34606, 76130, 23144, 52780]
+Average Case: Timsorted Array of size N = 100000First 10 integers: [3, 3, 3, 4, 4, 5, 5, 8, 8, 9]
+Last 10 integers: [99988, 99989, 99990, 99991, 99991, 99995, 99996, 99997, 99997, 99999]Time taken: 0.220220 seconds
+
+Unsorted array of size N = 1000000[64377, 81322, 52229, 28062, 93034, 64665, 91197, 97514, 11074, 5702]
+Average Case: Timsorted Array of size N = 1000000First 10 integers: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Last 10 integers: [100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000]Time taken: 3.481349 seconds
