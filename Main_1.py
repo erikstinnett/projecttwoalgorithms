@@ -19,8 +19,7 @@ array_average = [random.randint(1, 100000) for _ in range(1000000)]
 bubble_best = [x for x in range(1, 100000)]
 tim_best = [x for x in range(1, 100000)]
 merge_best = [x for x in range(1, 100000)]
-
-quick_best = []    # <-------------------------------------------------------------------HERE***
+quick_best = [x for x in range(1, 100000)]
 
 
 # Creates an array of various orders to use for worst-case scenarios for the different sorting methods
@@ -352,13 +351,18 @@ file_obj.write(f"\n\n   SORT TIME: "
 
 # ---------------------------------> AVERAGE CASE QUICK <----------------------------------------
 
-array_length = len(array_average[:100]) - 1
+array_len_100 = len(array_average[:100]) - 1
+array_len_1000 = len(array_average[:1000]) - 1
+array_len_10000 = len(array_average[:10000]) - 1
+array_len_100000 = len(array_average[:100000]) - 1
+array_len_1000000 = len(array_average[:1000000]) - 1
 
-quick_100, dt_quick_100 = sorts.quick_sort(array_average[:100], 0, array_length)
-quick_1000, dt_quick_1000 = sorts.quick_sort(array_average[:1000], 0, array_length)
-quick_10000, dt_quick_10000 = sorts.quick_sort(array_average[:10000], 0, array_length)
-quick_100000, dt_quick_100000 = sorts.quick_sort(array_average[:100000], 0, array_length)
-quick_1000000, dt_quick_1000000 = sorts.quick_sort(array_average[:1000000], 0, array_length)
+
+quick_100, dt_quick_100 = sorts.quick_sort(array_average[:100], 0, array_len_100)
+quick_1000, dt_quick_1000 = sorts.quick_sort(array_average[:1000], 0, array_len_1000)
+quick_10000, dt_quick_10000 = sorts.quick_sort(array_average[:10000], 0, array_len_10000)
+quick_100000, dt_quick_100000 = sorts.quick_sort(array_average[:100000], 0, array_len_100000)
+quick_1000000, dt_quick_1000000 = sorts.quick_sort(array_average[:1000000], 0, array_len_1000000)
 
 
 # Print average case for timsort on 100, 1000, 10000, 100000, 1000000 integers
@@ -415,24 +419,105 @@ file_obj.write(f"\n\n   SORT TIME: "
 
 # ------------------------------------> QUICK BEST CASE <--------------------------------------
 
+array_len_100 = int((len(quick_best[:100])/2) - 1)
+array_len_1000 = int((len(quick_best[:1000])/2) - 1)
+array_len_10000 = int((len(quick_best[:10000])/2) - 1)
+array_len_100000 = int((len(quick_best[:1000000])/2) - 1)
 
 
+quick_best_100, dt_quick_best_100 = sorts.quick_sort(quick_best[:100], 0, array_len_100)
+quick_best_1000, dt_quick_best_1000 = sorts.quick_sort(quick_best[:1000], 0, array_len_1000)
+#quick_best_10000, dt_quick_best_10000 = sorts.quick_sort(quick_best[:10000], 0, array_len_10000)
+# quick_best_100000, dt_quick_best_100000 = sorts.quick_sort(quick_best[:100000], 0, array_len_100000)
+# quick_best_1000000, dt_quick_best_1000000 = sorts.quick_sort(quick_best[:1000000], 0, array_len_1000000)
+
+
+# Print best case for timsort on 100, 1000, 10000, 100000, 1000000 integers
+file_obj.write(f"\n\n\nQUICK SORT BEST CASE:"
+               "\n"
+               f"\n100 Integers"
+               f"\n\tUnsorted: "
+               f"\n\t\tFirst 10: {quick_best[:10]}"
+               f"\n\t\tLast 10: {quick_best[91:100]}"
+               f"\n\tSorted:"
+               f"\n\t\tFirst 10 integers sorted: {quick_best_100[:10]}"
+               f"\n\t\tLast 10 integers sorted: {quick_best_100[-10:]}"
+               "\n"
+               "\n1000 Integers"
+               f"\n\tUnsorted:"
+               f"\n\t\tFirst 10: {quick_best[:10]}"
+               f"\n\t\tLast 10: {quick_best[991:1000]}"
+               f"\n\tSorted:"
+               f"\n\t\tFirst 10 integers sorted: {quick_best_1000[:10]}"
+               f"\n\t\tLast 10 integers sorted: {quick_best_1000[-10:]}"
+               "\n")
+               # f"\n10000 Integers:"
+               # f"\n\tUnsorted: "
+               # f"\n\t\tFirst 10: {quick_best[:10]}"
+               # f"\n\t\tLast 10: {quick_best[9991:10000]}"
+               # f"\n\tSorted:"
+               # f"\n\t\tFirst 10 integers sorted: {quick_best_10000[:10]}"
+               # f"\n\t\tLast 10 integers sorted: {quick_best_10000[-10:]}"
+               # f"\n"
+               # f"\n100000 Integers:"
+               # f"\n\tUnsorted: "
+               # f"\n\t\tFirst 10: {quick_best[:10]}"
+               # f"\n\t\tLast 10: {quick_best[99991:100000]}"
+               # f"\n\tSorted:"
+               # f"\n\t\tFirst 10 integers sorted: {quick_best_100000[:10]}"
+               # f"\n\t\tLast 10 integers sorted: {quick_best_100000[-10:]}"
+               # f"\n"
+               # f"\n1000000 Integers:"
+               # f"\n\tUnsorted: "
+               # f"\n\t\tFirst 10: {quick_best[:10]}"
+               # f"\n\t\tLast 10: {quick_best[999991:1000000]}"
+               # f"\n\tSorted:"
+               # f"\n\t\tFirst 10 integers sorted: {quick_best_1000000[:10]}"
+               # f"\n\t\tLast 10 integers sorted: {quick_best_1000000[-10:]}")
+
+
+file_obj.write(f"\n\n   SORT TIME: "
+            f"\n\tTime elapsed for 100 integers: {dt_quick_best_100:0.6f} ms "
+            f"\n\tTime elapsed for 1000 integers: {dt_quick_best_1000:0.6f} ms")
+            # f"\n\tTime elapsed for 10000 integers: {dt_quick_best_10000:0.6f} ms")
+            # f"\n\tTime elapsed for 100000 integers: {dt_quick_best_100000:0.6f} ms"
+            # f"\n\tTime elapsed for 1000000 integers: {dt_quick_best_1000000:0.6f} ms")
 
 
 
 
 # -----------------------------------> WORST CASE QUICK <-------------------------------------
-array_length = len(quick_worst[:100]) - 1
 
-quick_worst_100, dt_quick_worst_100 = sorts.quick_sort(quick_worst[:100], 0, array_length)
-quick_worst_1000, dt_quick_worst_1000 = sorts.quick_sort(quick_worst[:1000], 0, array_length)
-quick_worst_10000, dt_quick_worst_10000 = sorts.quick_sort(quick_worst[:10000], 0, array_length)
-quick_worst_100000, dt_quick_worst_100000 = sorts.quick_sort(quick_worst[:100000], 0, array_length)
-quick_worst_1000000, dt_quick_worst_1000000 = sorts.quick_sort(quick_worst[:1000000], 0, array_length)
+array_len_100 = len(quick_worst[:100]) - 1
+array_len_1000 = len(quick_worst[:1000]) - 1
+array_len_10000 = len(quick_worst[:10000]) - 1
+array_len_100000 = len(quick_worst[:100000]) - 1
+array_len_1000000 = len(quick_worst[:1000000]) - 1
+
+
+quick_worst_100, dt_quick_worst_100 = sorts.quick_sort(quick_worst[:100], 0, array_len_100)
+try:
+    quick_worst_1000, dt_quick_worst_1000 = sorts.quick_sort(quick_worst[:1000], 0, array_len_1000)
+except Exception as e:
+    print(f"ERROR:{e}")
+#except:
+    #quick_worst_1000, dt_quick_worst_1000 = [None] * (1000-1), 0
+try:
+    quick_worst_10000, dt_quick_worst_10000 = sorts.quick_sort(quick_worst[:10000], 0, array_len_10000)
+except Exception as e:
+    print(f"ERROR:{e}")
+try:
+    quick_worst_100000, dt_quick_worst_100000 = sorts.quick_sort(quick_worst[:100000], 0, array_len_100000)
+except Exception as e:
+    print(f"ERROR:{e}")
+try:
+    quick_worst_1000000, dt_quick_worst_1000000 = sorts.quick_sort(quick_worst[:1000000], 0, array_len_1000000)
+except Exception as e:
+    print(f"ERROR:{e}")
 
 
 # Print best case for timsort on 100, 1000, 10000, 100000, 1000000 integers
-file_obj.write(f"\n\n\nQUICK SORT BEST CASE:"
+file_obj.write(f"\n\n\nQUICK SORT WORST CASE:"
                "\n"
                f"\n100 Integers"
                f"\n\tUnsorted: "
@@ -441,15 +526,22 @@ file_obj.write(f"\n\n\nQUICK SORT BEST CASE:"
                f"\n\tSorted:"
                f"\n\t\tFirst 10 integers sorted: {quick_worst_100[:10]}"
                f"\n\t\tLast 10 integers sorted: {quick_worst_100[-10:]}"
-               "\n"
-               "\n1000 Integers"
+               "\n")
+try:
+            file_obj.write(f"" 
+               f"\n1000 Integers"
                f"\n\tUnsorted:"
                f"\n\t\tFirst 10: {quick_worst[:10]}"
                f"\n\t\tLast 10: {quick_worst[991:1000]}"
                f"\n\tSorted:"
                f"\n\t\tFirst 10 integers sorted: {quick_worst_1000[:10]}"
                f"\n\t\tLast 10 integers sorted: {quick_worst_1000[-10:]}"
-               "\n"
+               "\n")
+except:
+            file_obj.write("f\n ERROR: MAXIMUM RECURSION FOR 1000 INT ")
+
+try:
+            file_obj.write(f" "
                f"\n10000 Integers:"
                f"\n\tUnsorted: "
                f"\n\t\tFirst 10: {quick_worst[:10]}"
@@ -457,7 +549,12 @@ file_obj.write(f"\n\n\nQUICK SORT BEST CASE:"
                f"\n\tSorted:"
                f"\n\t\tFirst 10 integers sorted: {quick_worst_10000[:10]}"
                f"\n\t\tLast 10 integers sorted: {quick_worst_10000[-10:]}"
-               f"\n"
+               f"\n")
+except:
+            file_obj.write(f"\n ERROR: MAXIMUM RECURSION FOR 10,000 INT ")
+
+try:
+            file_obj.write(f" "
                f"\n100000 Integers:"
                f"\n\tUnsorted: "
                f"\n\t\tFirst 10: {quick_worst[:10]}"
@@ -465,7 +562,12 @@ file_obj.write(f"\n\n\nQUICK SORT BEST CASE:"
                f"\n\tSorted:"
                f"\n\t\tFirst 10 integers sorted: {quick_worst_100000[:10]}"
                f"\n\t\tLast 10 integers sorted: {quick_worst_100000[-10:]}"
-               f"\n"
+               f"\n")
+except:
+            file_obj.write(f"\n ERROR: MAXIMUM RECURSION FOR 100,000 INT ")
+
+try:
+            file_obj.write(f" "
                f"\n1000000 Integers:"
                f"\n\tUnsorted: "
                f"\n\t\tFirst 10: {quick_worst[:10]}"
@@ -473,14 +575,17 @@ file_obj.write(f"\n\n\nQUICK SORT BEST CASE:"
                f"\n\tSorted:"
                f"\n\t\tFirst 10 integers sorted: {quick_worst_1000000[:10]}"
                f"\n\t\tLast 10 integers sorted: {quick_worst_1000000[-10:]}")
+except Exception as e:
+    file_obj.write(f"\n ERROR: {e} ||>> MAXIMUM RECURSION FOR 1,000,000 INT ARRAY: ARRAY REMAINS UNDEFINED")
 
 
 file_obj.write(f"\n\n   SORT TIME: "
             f"\n\tTime elapsed for 100 integers: {dt_quick_worst_100:0.6f} ms "
-            f"\n\tTime elapsed for 1000 integers: {dt_quick_worst_1000:0.6f} ms"
-            f"\n\tTime elapsed for 10000 integers: {dt_quick_worst_10000:0.6f} ms"
-            f"\n\tTime elapsed for 100000 integers: {dt_quick_worst_100000:0.6f} ms"
-            f"\n\tTime elapsed for 1000000 integers: {dt_quick_worst_1000000:0.6f} ms")
+            # f"\n\tTime elapsed for 1000 integers: {dt_quick_worst_1000:0.6f} ms"
+            # f"\n\tTime elapsed for 10000 integers: {dt_quick_worst_10000:0.6f} ms"
+            # f"\n\tTime elapsed for 100000 integers: {dt_quick_worst_100000:0.6f} ms"
+            # f"\n\tTime elapsed for 1000000 integers: {dt_quick_worst_1000000:0.6f} ms"
+            )
 
 
 
