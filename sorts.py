@@ -1,6 +1,9 @@
 # code taken from geeks for geeks
 
+import time
+
 def mergeSort(arr):
+    tic = time.perf_counter()
     if len(arr) > 1:
  
          # Finding the mid of the array
@@ -41,9 +44,16 @@ def mergeSort(arr):
             j += 1
             k += 1
 
+    toc = time.perf_counter()
+    dt = ((toc - tic) * 1000)
+
+    return arr, dt
+
+
 def bubbleSort(arr):
+    tic = time.perf_counter()
     n = len(arr)
- 
+
     # Traverse through all array elements
     for i in range(n):
  
@@ -55,6 +65,11 @@ def bubbleSort(arr):
             # than the next element
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
+
+    toc = time.perf_counter()
+    dt = ((toc - tic) * 1000)
+
+    return arr, dt
 
 # Function to find the partition position
 def partition(array, low, high):
@@ -86,6 +101,7 @@ def partition(array, low, high):
 # Function to perform quicksort
 
 def quick_sort(array, low, high):
+    tic = time.perf_counter()
     if low < high:
   
         # Find pivot element such that
@@ -98,3 +114,8 @@ def quick_sort(array, low, high):
   
         # Recursive call on the right of pivot
         quick_sort(array, pi + 1, high)
+
+    toc = time.perf_counter()
+    dt = ((toc - tic) * 1000)
+
+    return array, dt

@@ -1,5 +1,7 @@
 # Python3 program to perform basic timSort
 # timsort code taken from geeksforgeeks
+
+import time
 MIN_MERGE = 32
 
 
@@ -72,6 +74,7 @@ def merge(arr, l, m, r):
 # Iterative Timsort function to sort the
 # array[0...n-1] (similar to merge sort)
 def timSort(arr):
+	tic = time.perf_counter()
 	n = len(arr)
 	minRun = calcMinRun(n)
 
@@ -102,6 +105,11 @@ def timSort(arr):
 				merge(arr, left, mid, right)
 
 		size = 2 * size
+
+	toc = time.perf_counter()
+	dt = ((toc - tic) * 1000)
+
+	return arr, dt
 
 
 '''
