@@ -1,4 +1,5 @@
 # code taken from geeks for geeks
+# Each sort returns time elapsed
 
 import time
 
@@ -101,6 +102,7 @@ def partition(array, low, high):
 # Function to perform quicksort
 
 def quick_sort(array, low, high):
+    #print(f"QS Input Array Length:{len(array)} \n\tLo,Hi = {low},{high}")
     tic = time.perf_counter()
     if low < high:
   
@@ -117,5 +119,6 @@ def quick_sort(array, low, high):
 
     toc = time.perf_counter()
     dt = ((toc - tic) * 1000)
+    #print(f"DeltaT:{dt}")
 
     return array, dt
