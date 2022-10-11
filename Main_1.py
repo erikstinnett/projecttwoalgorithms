@@ -1,4 +1,6 @@
+# CSCI 3330
 # Main implementation file for project 2
+# This program tests average, best, and worst cases for various sorts using five different sized arrays.
 
 import timsort
 from color import *
@@ -13,25 +15,25 @@ sys.setrecursionlimit(1800)
 file_obj = open("output_1.txt", "w")
 
 # Creates an array of random integers to use for the average case scenarios
-array_average = [random.randint(1, 100000) for _ in range(1000000)]
+array_average = [random.randint(1, 100000) for _ in range(1000)]
 
 # Creates arrays of various orders to use for best-case scenarios
-bubble_best = [x for x in range(1, 100000)]
-tim_best = [x for x in range(1, 100000)]
-merge_best = [x for x in range(1, 100000)]
-quick_best = [5 for x in range(1, 100000)]
+bubble_best = [x for x in range(1, 1000)]
+tim_best = [x for x in range(1, 1000)]
+merge_best = [x for x in range(1, 1000)]
+quick_best = [random.randint(1, 100000) for _ in range(1000)]
 
 # Creates an array of various orders to use for worst-case scenarios for the different sorting methods
-bubble_worst = [random.randint(1, 100000) for _ in range(1000000)]
+bubble_worst = [random.randint(1, 100000) for _ in range(1000)]
 bubble_worst.sort(reverse=True)
 
-tim_worst = [random.randint(1, 100000) for _ in range(1000000)]
+tim_worst = [random.randint(1, 100000) for _ in range(1000)]
 tim_worst.sort(reverse=True)
 
-merge_worst = [random.randint(1, 100000) for _ in range(1000000)]
+merge_worst = [random.randint(1, 100000) for _ in range(1000)]
 merge_worst.sort(reverse=True)
 
-quick_worst = [x for x in range(1, 100000)]  # Worst case for quick is a pre-sorted ascending order array
+quick_worst = [x for x in range(1, 1000)]  # Worst case for quick is a pre-sorted ascending order array
 
 # TIMSORT
 
@@ -453,14 +455,14 @@ file_obj.write(f"\n\n   SORT TIME: "
                f"\n\tTime elapsed for 1000000 integers: {dt_quick_1000000:0.6f} ms")
 
 
-
 # ------------------------------------> QUICK BEST CASE <--------------------------------------
 
-array_len_100 = (len(quick_best[:50]) - 1)
-array_len_1000 = (len(quick_best[:100]) - 1)
-array_len_10000 = (len(quick_best[:500]) - 1)
-array_len_100000 = (len(quick_best[:750]) - 1)
-array_len_1000000 = (len(quick_best[:1000]) - 1)
+array_len_100 = int(len(quick_best[:50])/2 - 1)
+array_len_1000 = int(len(quick_best[:100])/2 - 1)
+array_len_10000 = int(len(quick_best[:500])/2 - 1)
+array_len_100000 = int(len(quick_best[:750])/2 - 1)
+array_len_1000000 = int(len(quick_best[:1000])/2 - 1)
+
 
 quick_best_100, dt_quick_best_100 = sorts.quick_sort(quick_best[:50], 0, array_len_100)
 quick_best_1000, dt_quick_best_1000 = sorts.quick_sort(quick_best[:100], 0, array_len_1000)
@@ -519,7 +521,6 @@ file_obj.write(f"\n\n   SORT TIME: "
                f"\n\tTime elapsed for 500 integers: {dt_quick_best_10000:0.6f} ms"
                f"\n\tTime elapsed for 750 integers: {dt_quick_best_100000:0.6f} ms"
                f"\n\tTime elapsed for 1000 integers: {dt_quick_best_1000000:0.6f} ms")
-
 
 
 # -----------------------------------> WORST CASE QUICK <-------------------------------------
